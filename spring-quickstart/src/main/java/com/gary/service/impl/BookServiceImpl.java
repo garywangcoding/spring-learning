@@ -11,10 +11,15 @@ import com.gary.service.BookService;
  * @Date: 2022/11/1 22:10
  */
 public class BookServiceImpl implements BookService {
-    private BookDao bookDao = new BookDaoImpl();
+    private BookDao bookDao;
+//            = new BookDaoImpl();
     @Override
     public void save() {
         System.out.println("book service save ...");
         bookDao.save();
+    }
+
+    public void setBookDao(BookDao bookDao) {
+        this.bookDao = bookDao;
     }
 }
